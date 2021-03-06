@@ -1,0 +1,46 @@
+eating date:time :Open text
+stoning Time :type flower, or oil
+boning :time
+
+daily reset
+
+interface
+presentation 
+
+Display last two caloric events,
+last two weed times
+wack it count4
+input
+choice management
+
+def food_squawker(pickled_food_memory):
+	print(Last two times of food and what they were
+	
+def weed_squawker(unpickled_weed_memory):
+	print you {consumed} at {} time x2
+	
+def wackage_squawker(unpickled_wackage_memory):
+	print(You last wacked it {} hours ago.format(unpickled_wackage_memory)
+	
+def interface()
+	dailyresetcheck()
+	print("1. Food tracker")
+	food_squawker
+	print("2. Weed Tracker")
+	weed_squawker
+	print("3. Wackage Tracker")
+	wackage_squawker
+	input("Select your tracker)
+	
+	if 1
+	foodstring = input("What did you eat?")
+	now = datetime.now()
+	add to pickled_food_memory
+	
+
+	if 2:
+	oil_or_bowl = input"1 for bowl, 2 for oil")
+	
+	if 3:
+	wackage_quality = input("On a scale of 1-5 rate your experience")
+	pickle wackage_quality and datetime
