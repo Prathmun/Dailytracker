@@ -7,7 +7,13 @@ now = datetime.now()
 date_obj = datetime.date(now)
 date_str = str(date_obj)
 
-    
+class Consumptive:
+    def __init__(self, name, squawker_text, question, selection_tree):
+        sef.name = name
+        self.squawker_text = squawker_text
+        self.question = question
+        self.selection_tree = selection_tree
+        #self.sqauwker caller  
 
 def daily_log_checker(type):
 
@@ -19,10 +25,7 @@ def daily_log_checker(type):
         todays_log = []
         pickle.dump(todays_log,(open(type + "_logs/" +date_str +".py", "wb")))    
     return todays_log
-       
-
-
-   
+         
 def general_pickler(type, input,):
 
     def pickle_dumper(obj_to_append, type):
@@ -68,7 +71,7 @@ def cyberspace_squawker():
         print("Before your last entrance to cyberspace you were doing: {} and you entered at {}".format(daily_log[-1][1],daily_log[-1][0]))
         print("and before that you did {} at {}".format(daily_log[-2][1],daily_log[-2][0]))
 
-#MEATFIX
+#SQUAWKER COULD BECOME A CLASS
 def break_squawker():
     daily_log = daily_log_checker("break")
     if len(daily_log) == 0:
@@ -78,8 +81,6 @@ def break_squawker():
     if len(daily_log) >= 2:
         print("Your last dive was about {} and you ended it at {}".format(daily_log[-1][1],daily_log[-1][0]))
         print("and the one before that was about {} and ended atat {}".format(daily_log[-2][1],daily_log[-2][0]))
-    
-
 def food_squawker():
     daily_log = daily_log_checker("food")
     if len(daily_log) == 0:
@@ -88,10 +89,7 @@ def food_squawker():
         print("you last ate {} at {}".format(daily_log[-1][1],daily_log[-1][0]))
     if len(daily_log) >= 2:
         print("you last ate {} at {}".format(daily_log[-1][1],daily_log[-1][0]))
-        print("and before that you ate {} at {}".format(daily_log[-2][1],daily_log[-2][0]))
-            
- 
-	
+        print("and before that you ate {} at {}".format(daily_log[-2][1],daily_log[-2][0]))	
 def weed_squawker():
     daily_log = daily_log_checker("weed")
     if len(daily_log) == 0:
@@ -100,8 +98,7 @@ def weed_squawker():
         print("Your last thc dose was at {} and was {}".format(daily_log[-1][0],daily_log[-1][1]))
     if len(daily_log) >= 2:
         print("Your last thc dose was at {} and was a {}".format(daily_log[-1][0],daily_log[-1][1]))
-        print("And before thaty our last thc dose was at {} and was a {}".format(daily_log[-2][0],daily_log[-2][1]))
-	
+        print("And before thaty our last thc dose was at {} and was a {}".format(daily_log[-2][0],daily_log[-2][1]))	
 def wackage_squawker():
     daily_log = daily_log_checker("wackage")
     if len(daily_log) == 0:
