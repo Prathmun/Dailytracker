@@ -36,11 +36,11 @@ date_str = str(date_obj)
 
 class Consumptive:
     def __init__(self, name, verb, input_string):
-        sef.name = name
+        self.name = name
         self.verb = verb
         self.input_string = input_string
  
-    def solicit_input():
+    def solicit_input(self):
         response =input(self.input_string)
         if self.name == "weed":
             if response == 1:
@@ -51,7 +51,7 @@ class Consumptive:
         general_pickler(self.name, response)
         return response
     
-    def squawker():
+    def squawker(self):
         daily_log = (daily_log_checker(self.name))
         if len(daily_log) == 0:
             print("You have not {} {} yet today".format(self.verb, self.name))
@@ -62,13 +62,13 @@ class Consumptive:
             print("and before that you {} {} it was {} and it was at {}".format(self.verb, self.name, daily_log[-2][1],daily_log[-2][0]))
 
 
-#food = class Cononsumptive("food', "eaten", "What did you eat?")     
-#weed = class Cononsumptive("weed", "consume", "1 for bowl, 2 for oil.")
-#wackage = class Cononsumptive("wackage', verb", "On a scale of 1-5 rate your experience.")
-#break = class Cononsumptive("break', "taken", "What were you doing in cyberspace before this break?")
-#cyber = class Cononsumptive("cyber', "dive", "What were you doing in meatspace prior to this dive?")
+food = Consumptive("food", "eaten", "What did you eat?")     
+weed = Consumptive("weed", "consume", "1 for bowl, 2 for oil.")
+wackage = Consumptive("wackage", "beaten", "On a scale of 1-5 rate your experience.")
+MEAT = Consumptive("break", "taken", "What were you doing in cyberspace before this break?")
+cyber = Consumptive("cyber", "dive", "What were you doing in meatspace prior to this dive?")
        
-# consumptive_list = [food, weed, wackage, MEAT, cyber]
+consumptive_list = [food, weed, wackage, MEAT, cyber]
 
 #consumptives in consideration for adding
 #caffiene = class Cononsumptive("name', verb", "input_string")
@@ -76,83 +76,21 @@ class Consumptive:
 
 
 
-
-def cyberspace_squawker():
-    daily_log = daily_log_checker("cyberspace")
-    if len(daily_log) == 0:
-        print("You have not left meatspace yet today")
-    if len(daily_log) == 1:
-        print("your last meatdance was about {} and you ended it at {}".format(daily_log[-1][1],daily_log[-1][0]))
-    if len(daily_log) >= 2:
-        print("Before your last entrance to cyberspace you were doing: {} and you entered at {}".format(daily_log[-1][1],daily_log[-1][0]))
-        print("and before that you did {} at {}".format(daily_log[-2][1],daily_log[-2][0]))
-def break_squawker():
-    daily_log = daily_log_checker("break")
-    if len(daily_log) == 0:
-        print("You have not left cyberspace today")
-    if len(daily_log) == 1:
-        print("Your last dive was about {} and you ended it at {}".format(daily_log[-1][1],daily_log[-1][0]))
-    if len(daily_log) >= 2:
-        print("Your last dive was about {} and you ended it at {}".format(daily_log[-1][1],daily_log[-1][0]))
-        print("and the one before that was about {} and ended atat {}".format(daily_log[-2][1],daily_log[-2][0]))
-def food_squawker():
-    daily_log = daily_log_checker("food")
-    if len(daily_log) == 0:
-        print("You have not eaten anything today")
-    if len(daily_log) == 1:
-        print("you last ate {} at {}".format(daily_log[-1][1],daily_log[-1][0]))
-    if len(daily_log) >= 2:
-        print("you last ate {} at {}".format(daily_log[-1][1],daily_log[-1][0]))
-        print("and before that you ate {} at {}".format(daily_log[-2][1],daily_log[-2][0]))	
-def weed_squawker():
-    daily_log = daily_log_checker("weed")
-    if len(daily_log) == 0:
-        print("You have not gotten stoned today")
-    if len(daily_log) == 1:
-        print("Your last thc dose was at {} and was {}".format(daily_log[-1][0],daily_log[-1][1]))
-    if len(daily_log) >= 2:
-        print("Your last thc dose was at {} and was a {}".format(daily_log[-1][0],daily_log[-1][1]))
-        print("And before thaty our last thc dose was at {} and was a {}".format(daily_log[-2][0],daily_log[-2][1]))	
-def wackage_squawker():
-    daily_log = daily_log_checker("wackage")
-    if len(daily_log) == 0:
-        print("You've not wacked it today")
-    if len(daily_log) == 1:
-        print("You last wacked it at {} and you rated it a {} out of 5".format(daily_log[-1][0],daily_log[-1][1]))
-    if len(daily_log) >= 2:
-        print("You last wacked it at {} and you rated it a {} out of 5".format(daily_log[-1][0],daily_log[-1][1]))
-        print("and before that you last wacked it at {} and you rated it a {} out of 5".format(daily_log[-2][0],daily_log[-2][1]))
     
 def interface():
     for i in range(0,30):
         print(" ")
-    #list_pos = 0
-    #for each in consumptive_list:
-        #str_list_post = str(list_pos)
-        #print(str_list_post +". " each.name + " Tracker:"
-        #daily_log_checker(each)
-        #each.squawker()
-        #print("*****************")
-    print("1. Food tracker")
-    daily_log_checker("food")
-    food_squawker()
-    print("*****************")
-    print("2. Weed Tracker")
-    daily_log_checker("weed")
-    weed_squawker()
-    print("*****************")
-    print("3. Wackage Tracker")
-    daily_log_checker("wackage")
-    wackage_squawker()
-    print("*****************")
-    print("4. MEATTRACKER ") 
-    daily_log_checker("break")
-    break_squawker()
-    print("*****************")
-    print("5. Cyber Dive Checkpoint")
-    daily_log_checker("cyberspace")
-    cyberspace_squawker()
-    print("*****************")
+    list_pos = 0
+    
+    for each in consumptive_list:
+        str_list_post = str(list_pos)
+        print(str_list_post +". " + each.name + " Tracker:")
+        daily_log_checker(each.name)
+        
+        each.squawker()
+        
+        print("*****************")
+        list_pos += 1
     
     
     for i in range(0,5):
@@ -162,32 +100,9 @@ def interface():
     selection = input("Select your tracker")     
     selection = int(selection)
     
-    #consumptive_list[selection].solicit_input()
+    consumptive_list[selection].solicit_input()
 
     
-    if selection == 1:
-        foodstring = input("What did you eat?")
-        general_pickler("food", foodstring)
-        
-    if selection == 2:
-        oil_or_bowl = input("1 for bowl, 2 for oil")
-        oil_or_bowl = int(oil_or_bowl)
-        if oil_or_bowl == 1:
-            oil_or_bowl = "Bowl"
-        if oil_or_bowl == 2:
-            oil_or_bowl = "Dose(s) of Oil"
-        general_pickler("weed", oil_or_bowl)	
-        
-    if selection == 3:
-        wackage_quality = input("On a scale of 1-5 rate your experience")
-        general_pickler("wackage", wackage_quality)
-        
-    if selection == 4:
-        break_type =input(" Prior to your reemergence into meatspace, we have just one question. What was that dive about?")
-        general_pickler("break", break_type)
-        
-    if selection == 5:
-        entrance_activity = input("What were you doing in meatspace before this dive? ")
-        general_pickler("cyberspace", entrance_activity)
+   
         
 interface()
