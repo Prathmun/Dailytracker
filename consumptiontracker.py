@@ -1,34 +1,6 @@
 from datetime import *
 import pickle
 
-
-#if an input is empty, it shouldn't get entered into the log
-now = datetime.now()
-date_obj = datetime.date(now)
-date_str = str(date_obj)
-
-class Consumptive:
-    def __init__(self, name, verb, input_string):
-        sef.name = name
-        self.verb = verb
-        self.input_string = input_string
- 
-    def solicit_input():
-        response =input(self.input_string)
-        general_pickler(self.name, response)
-        return response
-    
-    def squawker():
-        daily_log = (daily_log_checker(name))
-        if len(daily_log) == 0:
-            print("You have not {} {} yet today".format(self.verb, self.name))
-        if len(daily_log) == 1:
-            print("you last {} {} it was {} and you ended it at {}".format(self.verb, self.name, daily_log[-1][1],daily_log[-1][0]))
-        if len(daily_log) >= 2:
-            print("you last {} {} it was {} and you ended it at {}".format(self.verb, self.name, daily_log[-1][1],daily_log[-1][0]))
-            print("and before that you {} {} it was {} and it was at {}".format(self.verb, self.name, daily_log[-2][1],daily_log[-2][0]))
-     
-        
 def daily_log_checker(type):
 
     try:
@@ -56,6 +28,52 @@ def general_pickler(type, input,):
     obj_to_append = [time_str, input]
     print(obj_to_append)
     pickle_dumper(obj_to_append, type)
+
+#if an input is empty, it shouldn't get entered into the log
+now = datetime.now()
+date_obj = datetime.date(now)
+date_str = str(date_obj)
+
+class Consumptive:
+    def __init__(self, name, verb, input_string):
+        sef.name = name
+        self.verb = verb
+        self.input_string = input_string
+ 
+    def solicit_input():
+        response =input(self.input_string)
+        if self.name == "weed":
+            if response == 1:
+                response = "Bowl"
+            if response == 2:
+                response = "Dose(s) of Oil"
+            
+        general_pickler(self.name, response)
+        return response
+    
+    def squawker():
+        daily_log = (daily_log_checker(self.name))
+        if len(daily_log) == 0:
+            print("You have not {} {} yet today".format(self.verb, self.name))
+        if len(daily_log) == 1:
+            print("you last {} {} it was {} and you ended it at {}".format(self.verb, self.name, daily_log[-1][1],daily_log[-1][0]))
+        if len(daily_log) >= 2:
+            print("you last {} {} it was {} and you ended it at {}".format(self.verb, self.name, daily_log[-1][1],daily_log[-1][0]))
+            print("and before that you {} {} it was {} and it was at {}".format(self.verb, self.name, daily_log[-2][1],daily_log[-2][0]))
+
+
+#food = class Cononsumptive("food', "eaten", "What did you eat?")     
+#weed = class Cononsumptive("weed", "consume", "1 for bowl, 2 for oil.")
+#wackage = class Cononsumptive("wackage', verb", "On a scale of 1-5 rate your experience.")
+#break = class Cononsumptive("break', "taken", "What were you doing in cyberspace before this break?")
+#cyber = class Cononsumptive("cyber', "dive", "What were you doing in meatspace prior to this dive?")
+       
+# consumptive_list = [food, weed, wackage, MEAT, cyber]
+
+#consumptives in consideration for adding
+#caffiene = class Cononsumptive("name', verb", "input_string")
+#water = class Cononsumptive("name', verb", "input_string")
+
 
 
 
@@ -108,9 +126,11 @@ def wackage_squawker():
 def interface():
     for i in range(0,30):
         print(" ")
+    #list_pos = 0
     #for each in consumptive_list:
-        #print(NUMBER NAME tracker)
-        #daily log tracker(each)
+        #str_list_post = str(list_pos)
+        #print(str_list_post +". " each.name + " Tracker:"
+        #daily_log_checker(each)
         #each.squawker()
         #print("*****************")
     print("1. Food tracker")
@@ -143,6 +163,8 @@ def interface():
     selection = int(selection)
     
     #consumptive_list[selection].solicit_input()
+
+    
     if selection == 1:
         foodstring = input("What did you eat?")
         general_pickler("food", foodstring)
@@ -150,7 +172,6 @@ def interface():
     if selection == 2:
         oil_or_bowl = input("1 for bowl, 2 for oil")
         oil_or_bowl = int(oil_or_bowl)
-        ### OPEN QUESTION ###
         if oil_or_bowl == 1:
             oil_or_bowl = "Bowl"
         if oil_or_bowl == 2:
